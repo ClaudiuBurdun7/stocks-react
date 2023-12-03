@@ -39,7 +39,6 @@ export default function Chart() {
                 if (response.data && response.data.results) {
                     setError(false)
                     setCompanies(response.data.results);
-                    // Selectează prima companie din listă ca valoare implicită
                     setSelectedCompany(response.data.results[0]?.ticker || "");
                 } else {
                     console.error('Invalid API data', response);
