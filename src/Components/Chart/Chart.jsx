@@ -139,12 +139,11 @@ export default function Chart() {
                 <Select
                     value={selectedCompany}
                     onChange={(value) => setSelectedCompany(value)}
-                    style={{ width: 200 }}
                 >
                     {
-                        companies.sort().map((company) => (
+                        companies.sort((a, b) => a.ticker.localeCompare(b.ticker)).sort().map((company) => (
                         <Option key={company.ticker} value={company.ticker}>
-                            {company.name}
+                            {company.ticker} - {company.name}
                         </Option>
                     ))}
                 </Select>
